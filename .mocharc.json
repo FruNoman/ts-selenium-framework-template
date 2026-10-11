@@ -1,0 +1,10 @@
+{
+  "node-option": ["import=tsx"],
+  "spec": ["tests/**/*.spec.ts"],
+  "require": ["src/support/hooks.ts"],
+  "parallel": true,
+  "jobs": 4,
+  "timeout": 300000,
+  "reporter": "xunit",
+  "reporter-option": ["output=build/test-results/junit.xml"]
+}

@@ -1,0 +1,24 @@
+{
+  "extraKnownMarketplaces": {
+    "qa-automation-toolkit": {
+      "source": {
+        "source": "github",
+        "repo": "FruNoman/qa-automation-toolkit"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "qa-core@qa-automation-toolkit": true,
+    "qa-ts@qa-automation-toolkit": true
+  },
+  "permissions": {
+    "allow": [
+      "mcp__plugin_qa-core_selenium__*",
+      "Bash(npx mocha:*)",
+      "Bash(npm run check:*)",
+      "Bash(npm run test:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx eslint:*)"
+    ]
+  }
+}

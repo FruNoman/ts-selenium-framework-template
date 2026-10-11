@@ -1,0 +1,18 @@
+# Exactly what CI runs, locally:
+#   docker compose -f docker-compose.grid.yml -f docker-compose.ci.yml up --build \
+#     --abort-on-container-exit --exit-code-from tests
+services:
+  tests:
+    build: .
+    depends_on:
+      selenium-hub:
+        condition: service_healthy
+    environment:
+      - CI=true
+      - RUNNER=grid
+      - GRID_URL=http://selenium-hub:4444
+      - BASE_URL
+      - TEST_ENV
+      - BROWSER
+    volumes:
+      - ./build:/workspace/build

@@ -1,0 +1,4 @@
+{
+  "//": "CI=true: slower shared machines — longer waits.",
+  "timeouts": { "wait": 20, "pageLoad": 60 }
+}

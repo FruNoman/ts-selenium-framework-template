@@ -1,0 +1,10 @@
+{
+  "//": "Defaults for every run. Layered, later wins: config/application.json → config/application-ci.json (CI=true) → resources/env/<env>.json → env vars (TEST_ENV, BASE_URL, RUNNER, BROWSER, HEADLESS, GRID_URL, TIMEOUT).",
+  "env": "dev",
+  "runner": "local",
+  "browser": { "name": "chrome", "headless": true, "window": [1440, 900] },
+  "grid": { "url": "http://localhost:4444" },
+  "timeouts": { "wait": 10, "pageLoad": 30 },
+  "artifacts": { "dir": "build/reports/failures" },
+  "data": { "dir": "resources/data" }
+}
