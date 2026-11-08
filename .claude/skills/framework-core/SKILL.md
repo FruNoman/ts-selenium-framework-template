@@ -27,6 +27,16 @@ action — `return this` or the next page, `waitLoaded()`. Waits: `waitUntil(dri
 "what")` — the message is the failure's first line; no sleeps. **Every WebDriver call is
 awaited** (eslint `no-floating-promises`).
 
+## API log
+
+`src/api/apiLog.ts` (the Java templates' layout): every HTTP call is one `console.info` message
+`INFO api`, a block between two lines of 100 `_`: `REQUEST: <METHOD> <url>`, the headers,
+`form: name=value` lines (a urlencoded body) or the pretty body (JSON at 4 spaces),
+`RESPONSE: <status> (<ms> ms)`, the headers, the pretty body. Masked: `Authorization`,
+`Proxy-Authorization`, `Cookie`, `Set-Cookie`, `X-API-Key` values and fields named like password /
+secret / token / api key → `***`; a body over 20 000 characters is cut. The skeleton makes no HTTP
+calls yet — the login or API client a project adds sends through `loggedFetch` or `logApiCall`.
+
 ## Data, settings, runs
 
 - `loadData(Schema, "<file>", "<variant>")` — zod validates; placeholders `{{uniqueTimestamp}}`
